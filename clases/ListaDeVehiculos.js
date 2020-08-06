@@ -8,8 +8,9 @@ module.exports = class ListaDeVehiculos {
   }
 
   ordenar() {
-    this.vehiculos.sort((a, b) => b.precio - a.precio);
-    return this.vehiculos;
+    let vehiculosOrdenados = this.vehiculos
+    vehiculosOrdenados.sort((a, b) => b.precio - a.precio);
+    return vehiculosOrdenados;
   }
 
   masCaro() {
