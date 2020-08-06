@@ -15,4 +15,4 @@ listaDeVehiculos.agregar(moto1);
 listaDeVehiculos.agregar(auto2);
 listaDeVehiculos.agregar(moto2);
 
-listaDeVehiculos.displayVehiculos();
+console.log(listaDeVehiculos.toString());
