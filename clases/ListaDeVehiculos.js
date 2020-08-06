@@ -7,8 +7,8 @@ module.exports = class ListaDeVehiculos {
     this.vehiculos.push(vehiculo);
   }
 
-  ordenar() {
-    let vehiculosOrdenados = this.vehiculos
+  ordenadaMayorAmenorPrecio() {
+    let vehiculosOrdenados = [...this.vehiculos]
     vehiculosOrdenados.sort((a, b) => b.precio - a.precio);
     return vehiculosOrdenados;
   }
@@ -44,7 +44,7 @@ module.exports = class ListaDeVehiculos {
 
     let stringVehiculosOrdenados = "";
 
-    this.ordenar().forEach((vehiculo) => {
+    this.ordenadaMayorAmenorPrecio().forEach((vehiculo) => {
       stringVehiculosOrdenados += "\n" + vehiculo.marca + " " + vehiculo.modelo;
     });
 
@@ -60,7 +60,8 @@ module.exports = class ListaDeVehiculos {
         contieneLetraY.marca
       } ${contieneLetraY.modelo} $${formatear(contieneLetraY.precio)}` +
       "\n" +
-      "=============================" +
+      "=============================" + "\n" +
+      "Vehículos ordenados por precio de mayor a menor: " +
       stringVehiculosOrdenados
     );
   }
