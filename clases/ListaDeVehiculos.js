@@ -20,13 +20,13 @@ module.exports = class ListaDeVehiculos {
   }
 
   masBarato() {
-    return this.vehiculos.reduce(function (prev, current) {
+    return this.vehiculos.reduce((prev, current) => {
       return prev.precio < current.precio ? prev : current;
     });
   }
-
+//Asumo que el vehiculo es solo 1 porque enunciado vehiculo en singular
   contieneLetraY() {
-    return this.vehiculos.find((vehiculo) => vehiculo.modelo.includes("Y")); //Asumo que el vehiculo es solo 1 porque enunciado vehiculo en singular
+    return this.vehiculos.find( vehiculo => vehiculo.modelo.includes("Y")); 
   }
 
   toString() {
@@ -38,13 +38,13 @@ module.exports = class ListaDeVehiculos {
 
     let stringVehiculos = "";
 
-    this.vehiculos.forEach((vehiculo) => {
+    this.vehiculos.forEach( vehiculo => {
       stringVehiculos += vehiculo.toString() + "\n";
     });
 
     let stringVehiculosOrdenados = "";
 
-    this.ordenadaMayorAmenorPrecio().forEach((vehiculo) => {
+    this.ordenadaMayorAmenorPrecio().forEach( vehiculo => {
       stringVehiculosOrdenados += "\n" + vehiculo.marca + " " + vehiculo.modelo;
     });
 
